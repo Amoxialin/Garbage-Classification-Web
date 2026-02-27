@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <title>垃圾识别系统 - 课程设计</title>
+    <style>
+        /* 使用简洁现代的字体和配色 */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: "Microsoft YaHei", WenQuanYi Micro Hei, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2c3e50;
+        }
+        .wrapper {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 360px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        h1 {
+            margin: 0 0 15px 0;
+            font-weight: 600;
+            font-size: 24px;
+            letter-spacing: 1px;
+            color: #34495e;
+        }
+        p.description {
+            font-size: 14px;
+            margin: 0 0 30px 0;
+            color: #606f7b;
+            line-height: 1.5;
+        }
+        /* 按钮和文件上传框 */
+        input[type="file"] {
+            display: block;
+            margin: 0 auto 25px auto;
+            font-size: 14px;
+            cursor: pointer;
+            color: #34495e;
+        }
+        button {
+            background-color: #3498db;
+            border: none;
+            color: white;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.25s ease;
+            font-weight: 500;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        button:active {
+            background-color: #1c5985;
+        }
+        /* 小屏设备适配 */
+        @media (max-width: 400px) {
+            .wrapper {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>垃圾识别系统</h1>
+        <p class="description">上传垃圾图片，系统将自动识别并给出分类结果，助力垃圾分类智能化。</p>
+        <!-- 表单提交目标地址, 必须使用POST方法传输文件,关键：启用二进制文件传输编码,禁用浏览器默认验证（统一由后端验证）       -->
+        <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data" novalidate>
+            <input type="file" name="file" accept="image/*" required />
+            <!--   提交按钮（触发表单上传）         -->
+            <button type="submit">开始识别</button>
+        </form>
+    </div>
+</body>
+</html>

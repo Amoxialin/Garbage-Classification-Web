@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>错误提示</title>
+    <style>
+        body { font-family: "Microsoft YaHei", sans-serif; background-color: #fff0f0; color: #c0392b; }
+        .container { max-width: 400px; margin: 60px auto; padding: 20px; border: 2px solid #e74c3c; border-radius: 8px; background: #fceaea; box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);}
+        h2 { color: #e74c3c; margin-bottom: 10px; }
+        p { font-size: 1.1em; }
+        a { color: #e74c3c; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>错误提示</h2>
+        <p>{{ message }}</p>
+        <p><a href="{{ url_for('index') }}">返回上传页面</a></p>
+    </div>
+</body>
+</html>

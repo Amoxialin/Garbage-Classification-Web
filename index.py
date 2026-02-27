@@ -1,0 +1,19 @@
+import json
+
+class_dict = {
+  "0": "电池",
+  "1": "生物",
+  "2": "棕色玻璃",
+  "3": "纸板",
+  "4": "衣服",
+  "5": "绿色玻璃",
+  "6": "金属",
+  "7": "纸",
+  "8": "塑料",
+  "9": "鞋",
+  "10": "纺织品",
+  "11": "白色玻璃"
+}
+
+with open('classes.json', 'w', encoding='utf-8') as f:
+    json.dump(class_dict, f, ensure_ascii=False, indent=2)
